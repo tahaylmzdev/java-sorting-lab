@@ -1,6 +1,6 @@
     public class SortingAlgorithms
     {
-        public static void SelectionSort(int a[])
+        public static void selectionSort(int a[])
         {
             int minValueIndex;
             minValueIndex = 0;
@@ -26,7 +26,7 @@
 
 
         }
-        public static void InsertionSort(int a[])
+        public static void insertionSort(int a[])
         {
 
             for (int numberIndex = 1; numberIndex < a.length; numberIndex++)
@@ -34,19 +34,16 @@
                 int currentIndex = numberIndex;
                 while(currentIndex > 0 && a[currentIndex] < a[currentIndex - 1])
                 {
-                    if (a[currentIndex] < a[currentIndex - 1])
-                    {
-                        int temp = a[currentIndex];
-                        a[currentIndex] = a[currentIndex - 1];
-                        a[currentIndex - 1] = temp;
-                    }
+                    int temp = a[currentIndex];
+                    a[currentIndex] = a[currentIndex - 1];
+                    a[currentIndex - 1] = temp;
                     currentIndex--;
                 }
 
             }
         }
 
-        public static void MergeSort(int a[])
+        public static void mergeSort(int a[])
         {
             if (a.length <= 1)
             {
@@ -67,13 +64,13 @@
             }
 
 
-            MergeSort(left);
-            MergeSort(right);
-            Merge(a,left,right);
+            mergeSort(left);
+            mergeSort(right);
+            merge(a,left,right);
 
 
         }
-        public static void Merge(int[] a, int[] left, int[] right)
+        public static void merge(int[] a, int[] left, int[] right)
         {
             int i, j, k;
             j = k = i = 0;

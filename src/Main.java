@@ -2,11 +2,13 @@ import java.util.Scanner;
 public class Main
 {
     static Scanner scanner = new Scanner(System.in);
+    static int[] numbers;
 
     public static void main(String[] args)
     {
-        int[] numbers = {20,2,12,6,25,4,11,19};
+        arrayInput();
 
+        System.out.println("\nYour array: ");
         for (int i = 0; i < numbers.length; i++)
         {
             System.out.print(numbers[i] + " ");
@@ -15,13 +17,31 @@ public class Main
         menu(numbers);
 
     }
+    public static void arrayInput()
+    {
+        System.out.println("Enter the size of your array: ");
+        int arraySize = scanner.nextInt();
+
+        while (arraySize <= 0)
+        {
+            System.out.println("Enter the size of your array: ");
+            arraySize = scanner.nextInt();
+        }
+        numbers = new int[arraySize];
+        for (int i = 0; i < numbers.length; i++)
+        {
+            System.out.printf("Enter your number %d element of array: ", i+1);
+            numbers[i] = scanner.nextInt();
+        }
+
+    }
     public static void menu(int numbers[])
     {
 
         System.out.print("""
                 
                 
-                Choose a sorting algorithm:
+                Choose a sorting algorithm that you'd like to do:
                 1. Selection Sort
                 2. Insertion Sort
                 3. Merge Sort
@@ -33,17 +53,17 @@ public class Main
         {
             case 1:
                 System.out.println("Selection Sort selected");
-                SortingAlgorithms.SelectionSort(numbers);
+                SortingAlgorithms.selectionSort(numbers);
                 displayArray(numbers);
                 break;
             case 2:
                 System.out.println("Insertion Sort selected");
-                SortingAlgorithms.InsertionSort(numbers);
+                SortingAlgorithms.insertionSort(numbers);
                 displayArray(numbers);
                 break;
             case 3:
                 System.out.println("Merge Sort selected");
-                SortingAlgorithms.MergeSort(numbers);
+                SortingAlgorithms.mergeSort(numbers);
                 displayArray(numbers);
                 break;
             default:
