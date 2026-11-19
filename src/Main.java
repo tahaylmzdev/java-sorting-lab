@@ -5,7 +5,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        int[] numbers = {20,2,12,6,25};
+        int[] numbers = {20,2,12,6,25,4,11,19};
 
         for (int i = 0; i < numbers.length; i++)
         {
@@ -25,7 +25,8 @@ public class Main
                 1. Selection Sort
                 2. Insertion Sort
                 3. Merge Sort
-                Enter your choice: """);
+                Enter your choice: 
+                """);
         int choice = scanner.nextInt();
 
         switch (choice)
@@ -33,18 +34,30 @@ public class Main
             case 1:
                 System.out.println("Selection Sort selected");
                 SortingAlgorithms.SelectionSort(numbers);
+                displayArray(numbers);
                 break;
             case 2:
                 System.out.println("Insertion Sort selected");
                 SortingAlgorithms.InsertionSort(numbers);
+                displayArray(numbers);
                 break;
             case 3:
                 System.out.println("Merge Sort selected");
-                System.out.println("Not implemented yet");
+                SortingAlgorithms.MergeSort(numbers);
+                displayArray(numbers);
                 break;
             default:
                 System.out.println("Invalid choice!");
                 break;
         }
+    }
+    public static void displayArray(int a[])
+    {
+        System.out.println("Sorted array: ");
+        for(int k = 0; k < a.length; k++)
+        {
+            System.out.print(a[k] + " ");
+        }
+        System.out.println(" ");
     }
 }
