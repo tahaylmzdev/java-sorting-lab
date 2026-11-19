@@ -5,18 +5,19 @@ public class Main
 
     public static void main(String[] args)
     {
-        int[] numbers = {5, 2, 9, 1, 7};
+        int[] numbers = {20,2,12,6,25};
 
         for (int i = 0; i < numbers.length; i++)
         {
             System.out.print(numbers[i] + " ");
         }
 
-        menu();
+        menu(numbers);
 
     }
-    public static void menu()
+    public static void menu(int numbers[])
     {
+
         System.out.print("""
                 
                 
@@ -31,11 +32,11 @@ public class Main
         {
             case 1:
                 System.out.println("Selection Sort selected");
-                System.out.println("Not implemented yet");
+                SortingAlgorithms.SelectionSort(numbers);
                 break;
             case 2:
                 System.out.println("Insertion Sort selected");
-                System.out.println("Not implemented yet");
+                SortingAlgorithms.InsertionSort(numbers);
                 break;
             case 3:
                 System.out.println("Merge Sort selected");
